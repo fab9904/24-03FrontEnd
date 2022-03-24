@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=El+Messiri&display=swap" rel="stylesheet" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: rgb(247,206,215);
+                color: rgba(224,238,238,.8);
+                font-family: 'El Messiri', sans-serif;
+                font-weight:300;
+            }
+            div {
+                padding: 2rem;
+            }
+            h1{
+              font-size: calc(2rem + 2vw);
+              font-weight.900;
+              padding: 0 0 1.5rem 0;
+              color: black;
+              line-height. 1;
+            }
+            p {
+                padding: 1rem 0 0 0;
+            }
+            em{
+              font-style:normal;
+              dont-weight: 600;
+            }
+            @media (min-width: 800px) {
+                p {
+                    max-width: 60%;
+                }
+            }
+        </style>
+        <title>Holaaa segunda sesion!</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+            integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+        <div>
+            <h1><span id="saludo"></span> Me llamo <span id="nombre"></span></h1>
+            <p>
+                He tomado este electivo debido a que quería saber como sería un ramo de este tipo, también por temas de horario y cupos en otros ramos no tuve muchas opciones. Otra razón es que quiero aprender de estos temas ya que no he
+                tomado ningun electivo anterior de este estilo.
+            </p>
+            <p>La razón por la que he venido a esta segunda clase es porque me ha parecido un curso interesante a pesar de verse un poco difícil.</p>
+        </div>
+        <script>
+            var opciones = ["Hola", "Tanto tiempo", "Que tal", " Hi."];
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40)
+                    .position(20, 20)
+                    .style("z-index", -1);
+                document.getElementById("nombre").textContent += "Fabiola";
+                document.getElementById("saludo").textContent += random(opciones);
+            }
+            function draw() {
+              colorMode(HSB,360,100,100);
+                background(138, 21, 56);
+                textSize(100);
+                text("🐰", mouseX, mouseY);
+                fill(20);
+                ellipse(mouseX+50, mouseY+50, 100,10)
+            }
+            function windowResized() {
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            }
+        </script>
+    </body>
+</html>
